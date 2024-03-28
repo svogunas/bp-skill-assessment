@@ -1,0 +1,22 @@
+@use '../../variables' as *
+
+.button
+  border: none
+  background-color: $primary
+  height: 40px
+  border-radius: 20px
+  padding: 0 18px
+  font-size: 14px
+  font-weight: 600
+  color: #fff
+  transition: background-color 150ms ease-in-out, border-color 150ms ease-in-out, color 150ms ease-in-out
+  &:hover
+    background-color: $primaryDark
+  &.hollow
+    border: 2px solid #000
+    color: #000
+    background-color: transparent
+    &:hover
+      border-color: $primary
+      color: $primary
+      background-color: #0000000a
