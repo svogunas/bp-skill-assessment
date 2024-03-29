@@ -10,4 +10,13 @@ export default defineConfig({
       '@components': '/src/components',
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://dev-api.exoclass.com/api',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
 });

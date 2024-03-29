@@ -10,13 +10,24 @@
   font-weight: 600
   color: #fff
   transition: background-color 150ms ease-in-out, border-color 150ms ease-in-out, color 150ms ease-in-out
+  cursor: pointer
   &:hover
     background-color: $primaryDark
-  &.hollow
-    border: 2px solid #000
-    color: #000
+
+.hollow
+  border: 2px solid #000
+  color: #000
+  background-color: transparent
+  &:hover
+    border-color: $primary
+    color: $primary
+    background-color: #0000000a
+
+.wrapper
+  border: none
+  color: inherit
+  background-color: transparent
+  height: auto
+  padding: 0
+  &:hover
     background-color: transparent
-    &:hover
-      border-color: $primary
-      color: $primary
-      background-color: #0000000a

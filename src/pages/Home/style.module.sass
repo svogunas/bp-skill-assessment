@@ -1,0 +1,103 @@
+@use '../../variables' as *
+
+.homeWrapper
+  padding-top: 80px
+  & > h1
+    font-size: 42px
+    margin-bottom: 60px
+
+.groupWrapper
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-gap: 20px
+
+.groupCard
+  display: flex
+  flex-direction: column
+  border-radius: 10px
+  border: 1px solid $lightGray
+  overflow: hidden
+  position: relative
+  transition: transform 200ms ease-in-out
+  &:hover
+    transform: scale(1.03)
+  &.loggedIn
+    border-bottom: none
+
+.groupContent
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-areas: "cover cover" "spots date" "title title" "desc desc" "loc loc" "sched sched"
+  grid-gap: 10px 20px
+  padding: 0 20px 20px 20px
+  & > img
+    width: calc(100% + 40px)
+    height: 160px
+    object-fit: cover
+    margin: 0 -20px
+    grid-area: cover
+
+.topInfo
+  display: flex
+  align-items: center
+  font-size: 12px
+  font-weight: 500
+  color: $darkGray
+  &.spots
+    grid-area: spots
+  &.date
+    grid-area: date
+    justify-self: end
+  & > img
+    width: 22px
+    margin-right: 10px
+
+.groupTitle
+  font-size: 24px
+  grid-area: title
+
+.groupDescription
+  display: -webkit-box
+  -webkit-line-clamp: 3
+  -webkit-box-orient: vertical
+  overflow: hidden
+  font-size: 14px
+  grid-area: desc
+
+.bottomInfo
+  display: flex
+  align-items: center
+  font-size: 12px
+  font-weight: 500
+  &.location
+    grid-area: loc
+  &.schedule
+    grid-area: sched
+  & > img
+    width: 22px
+    margin-right: 10px
+
+.enlistButton
+  border-radius: 0
+  text-align: right
+
+.badgesWrapper
+  display: flex
+  flex-direction: column
+  position: absolute
+  top: 15px
+  right: 15px
+
+.badge
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 5px 8px
+  font-size: 12px
+  color: #fff
+  background-color: #c23761cc
+  border-radius: 20px
+  margin-bottom: 10px
+  & > img
+    width: 18px
+    margin-right: 5px

@@ -1,6 +1,7 @@
 @use '../../variables' as *
 
 .navContainer
+  position: relative
   width: 100%
   background-color: #fff
   padding: 0 40px
@@ -20,3 +21,42 @@
   display: flex
   & > button:not(:last-child)
     margin-right: 20px
+
+.loginModalWrapper
+  display: flex
+  flex-direction: column
+  padding: 20px
+  position: absolute
+  right: -150px
+  top: calc(100% + 20px)
+  width: 300px
+  border: 1px solid $lightGray
+  background-color: #fff
+  border-radius: 20px
+  transition: right 150ms ease-in-out, opacity 150ms ease-in-out
+  visibility: hidden
+  opacity: 0
+  z-index: 1
+  &.visible
+    visibility: visible
+    opacity: 1
+    right: 20px
+  & > input
+    margin-bottom: 20px
+
+.loginInput
+  height: 40px
+  font-size: 14px
+  border: 1px solid $lightGray
+  padding: 0 20px
+  border-radius: 20px
+
+.userControlsButton
+  padding: 10px
+  border-radius: 50%
+  height: 50px
+  width: 50px
+  &:hover
+    background-color: $highTransparency
+  & > img
+    width: 100%
