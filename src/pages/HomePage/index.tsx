@@ -13,9 +13,11 @@ import useUser from '@/hooks/useUser';
 
 const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-const Home = () => {
+const HomePage = () => {
   const { isUser } = useUser();
   const [groups, setGroups] = useState<any>();
+
+  // /api/v1/en/groups/cf47f7bc-345f-4d0a-95d1-ac828970887b
 
   useEffect(() => {
     fetch('/api/v1/en/groups?provider_key=7792d545-2bc6-4ee6-b96e-51bdf1d0d855')
@@ -67,7 +69,10 @@ const Home = () => {
                   [style.loggedIn]: isUser,
                 })}
               >
-                <Link to={`/${group.external_key}`} className={style.groupContent}>
+                <Link
+                  to={`/group/${group.external_key}`}
+                  className={style.groupContent}
+                >
                   <img src={group.image} alt="cover" />
                   <div className={classnames(style.topInfo, style.spots)}>
                     <img src={PeoplePng} alt="people" />
@@ -120,4 +125,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

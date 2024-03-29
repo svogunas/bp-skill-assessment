@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
 import App from './App.tsx';
-import Home from './pages/Home/index.tsx';
+import HomePage from './pages/HomePage/index.tsx';
+import GroupPage from './pages/GroupPage/index.tsx';
 import './global.sass';
 
 const router = createBrowserRouter([
@@ -12,7 +13,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />,
+        element: <HomePage />,
+        children: [
+          {
+            path: 'group/:slug',
+            element: <GroupPage />,
+          },
+        ],
       },
     ],
   },
