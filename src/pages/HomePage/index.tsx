@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import style from './style.module.sass';
 import { Link } from 'react-router-dom';
 import Button from '@components/Button';
-import PeoplePng from './people.png';
-import CalendarPng from './calendar.png';
-import MapPinPng from './mapPin.png';
-import ClockPng from './clock.png';
-import HatPng from './hat.png';
+import PeoplePng from '@/icons/people.png';
+import CalendarPng from '@/icons/calendar.png';
+import MapPinPng from '@/icons/mapPin.png';
+import ClockPng from '@/icons/clock.png';
+import HatPng from '@/icons/hat.png';
 import classnames from 'classnames';
 import moment from 'moment';
 import useUser from '@/hooks/useUser';
@@ -16,8 +16,6 @@ const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 const HomePage = () => {
   const { isUser } = useUser();
   const [groups, setGroups] = useState<any>();
-
-  // /api/v1/en/groups/cf47f7bc-345f-4d0a-95d1-ac828970887b
 
   useEffect(() => {
     fetch('/api/v1/en/groups?provider_key=7792d545-2bc6-4ee6-b96e-51bdf1d0d855')
@@ -70,7 +68,7 @@ const HomePage = () => {
                 })}
               >
                 <Link
-                  to={`/group/${group.external_key}`}
+                  to={`/${group.external_key}`}
                   className={style.groupContent}
                 >
                   <img src={group.image} alt="cover" />
